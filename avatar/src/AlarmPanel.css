@@ -1,0 +1,358 @@
+.alarm-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+}
+
+.alarm-panel {
+  background: #1a1a2e;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.alarm-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  border-bottom: 1px solid #333;
+  flex-shrink: 0;
+}
+
+.alarm-header-title {
+  padding: 12px 18px;
+  color: #eee;
+  font-size: 15px;
+  font-family: system-ui, sans-serif;
+  font-weight: 700;
+  user-select: none;
+}
+
+.alarm-title-buttons {
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+}
+
+.alarm-title-btn {
+  background: none;
+  border: none;
+  color: #999;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0 16px;
+  font-family: system-ui, sans-serif;
+  transition: background 0.1s, color 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alarm-title-btn:hover {
+  background: #333;
+  color: #eee;
+}
+
+.alarm-title-close:hover {
+  background: #e81123;
+  color: #fff;
+}
+
+.alarm-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 10px 22px 0;
+  border-bottom: 1px solid #333;
+}
+
+.alarm-tab {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 13px;
+  font-family: system-ui, sans-serif;
+  padding: 8px 18px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.12s, border-color 0.12s;
+}
+
+.alarm-tab:hover {
+  color: #ccc;
+}
+
+.alarm-tab.active {
+  color: #e94560;
+  border-bottom-color: #e94560;
+}
+
+.alarm-body {
+  flex: 1;
+  overflow: hidden;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.alarm-layout {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.alarm-list-section {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px 18px;
+  border-right: 1px solid #333;
+  min-width: 0;
+}
+
+.alarm-list-section::-webkit-scrollbar {
+  width: 5px;
+}
+
+.alarm-list-section::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 3px;
+}
+
+.alarm-list-section h3 {
+  margin: 0 0 10px;
+  color: #ddd;
+  font-size: 13px;
+  font-family: system-ui, sans-serif;
+  font-weight: 600;
+}
+
+.alarm-form-section {
+  width: 280px;
+  flex-shrink: 0;
+  overflow-y: auto;
+  padding: 16px 18px;
+}
+
+.alarm-form-section::-webkit-scrollbar {
+  width: 5px;
+}
+
+.alarm-form-section::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 3px;
+}
+
+.alarm-form-section h3 {
+  margin: 0 0 10px;
+  color: #ddd;
+  font-size: 13px;
+  font-family: system-ui, sans-serif;
+  font-weight: 600;
+}
+
+.alarm-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.alarm-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  color: #aaa;
+  font-size: 11px;
+  font-family: system-ui, sans-serif;
+}
+
+.alarm-form input[type="text"],
+.alarm-form input[type="time"],
+.alarm-form input[type="number"],
+.alarm-form input[type="date"],
+.alarm-form input[type="datetime-local"],
+.alarm-form select {
+  background: #0f0f1e;
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 7px 10px;
+  color: #ddd;
+  font-size: 12px;
+  font-family: system-ui, sans-serif;
+  outline: none;
+}
+
+.alarm-form input:focus,
+.alarm-form select:focus {
+  border-color: #e94560;
+}
+
+.alarm-add-btn {
+  background: #e94560;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 0;
+  color: #fff;
+  font-size: 12px;
+  font-family: system-ui, sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 4px;
+  transition: opacity 0.12s;
+}
+
+.alarm-add-btn:active {
+  opacity: 0.7;
+}
+
+.alarm-empty {
+  color: #666;
+  font-size: 12px;
+  font-family: system-ui, sans-serif;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.alarm-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #0f0f1e;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 6px;
+}
+
+.alarm-item.finished {
+  border-color: #e94560;
+}
+
+.alarm-item.disabled {
+  opacity: 0.45;
+}
+
+.alarm-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  flex: 1;
+}
+
+.alarm-item-time {
+  color: #eee;
+  font-size: 13px;
+  font-family: system-ui, sans-serif;
+  font-weight: 600;
+}
+
+.alarm-item-name {
+  color: #aaa;
+  font-size: 11px;
+  font-family: system-ui, sans-serif;
+}
+
+.alarm-item-tone {
+  color: #777;
+  font-size: 10px;
+  font-family: system-ui, sans-serif;
+}
+
+.alarm-item-actions {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.alarm-toggle {
+  border: none;
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 10px;
+  font-family: system-ui, sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.alarm-toggle.on {
+  background: #1a3a1e;
+  color: #4caf50;
+}
+
+.alarm-toggle.off {
+  background: #3a1a1e;
+  color: #e94560;
+}
+
+.alarm-edit-btn {
+  background: none;
+  border: 1px solid #444;
+  color: #999;
+  font-size: 11px;
+  cursor: pointer;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-family: system-ui, sans-serif;
+}
+
+.alarm-edit-btn:hover {
+  background: #2a2a4a;
+  color: #eee;
+}
+
+.alarm-remove {
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 3px 6px;
+  border-radius: 4px;
+}
+
+.alarm-remove:hover {
+  background: #3a1a1e;
+  color: #e94560;
+}
+
+.alarm-crono-display {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  padding: 12px 0;
+  font-family: system-ui, sans-serif;
+}
+
+.alarm-resize-handle {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 24px;
+  height: 24px;
+  cursor: nwse-resize;
+  z-index: 10;
+  background: linear-gradient(135deg, transparent 50%, rgba(233, 69, 96, 0.15) 50%);
+  border-radius: 0 0 16px;
+}
+
+.alarm-resize-handle::after {
+  content: "";
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  width: 12px;
+  height: 12px;
+  border-right: 2px solid #888;
+  border-bottom: 2px solid #888;
+}
+
+.alarm-resize-handle:hover::after {
+  border-color: #e94560;
+}
